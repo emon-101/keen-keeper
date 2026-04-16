@@ -1,7 +1,13 @@
+import Banner from "@/components/Banner/Banner";
+import Friends from "@/components/Friends/Friends";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <h2 className="text-3xl font-bold bg-base-200">Hello next js</h2>
+    <>
+      <Banner />
+      <div className="divider my-10"></div>
+      <Friends />
+    </>
   );
 }
