@@ -15,7 +15,7 @@ const FriendDetails = ({ params }) => {
     useContext(friendContext);
   const efriend = friends.find((friend) => friend.id === Number(friendId));
   const interactions = interaction.filter(
-    (item) => item.friend.id === Number(friendId),
+    (item) => item.friend.id === Number(friendId)
   );
 
   return (
