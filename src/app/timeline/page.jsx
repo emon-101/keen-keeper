@@ -6,6 +6,10 @@ import { friendContext } from "../contextApi/friendContext";
 const TimeLinePage = () => {
   const { timeline } = useContext(friendContext);
 
+  useEffect(() => {
+    document.title = "KeenKeeper | Timeline";
+  }, []);
+
   const [sortType, setSortType] = useState("");
   const [searchFriend, setSearchFriend] = useState("");
 

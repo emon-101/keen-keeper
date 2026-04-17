@@ -1,9 +1,12 @@
 "use client";
 import StatsChart from "@/components/StatsChart/StatsChart";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { friendContext } from "../contextApi/friendContext";
 
 const StatsPage = () => {
+  useEffect(() => {
+    document.title = "KeenKeeper | Stats";
+  }, []);
   const { interaction } = useContext(friendContext);
   return (
     <div className="space-y-6">
