@@ -8,12 +8,14 @@ import { MdDelete, MdSms } from "react-icons/md";
 import { PiPhoneCall } from "react-icons/pi";
 import { RiNotificationSnoozeLine } from "react-icons/ri";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 const FriendDetails = ({ params }) => {
   const { friendId } = use(params);
   const { friends, handleCall, handleSms, handleVideo, interaction } =
     useContext(friendContext);
   const efriend = friends.find((friend) => friend.id === Number(friendId));
+  if (friends.length > 0 && !efriend) notFound();
   const interactions = interaction.filter(
     (item) => item.friend.id === Number(friendId)
   );
