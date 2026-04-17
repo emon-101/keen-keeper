@@ -20,7 +20,7 @@ const Friends = () => {
     if (loading) {
         return (
             <>
-                <div className="flex min-h-screen justify-center items-center">
+                <div className="flex h-10 justify-center items-center">
                     <span className="loading loading-spinner text-primary"></span>
                 </div>
             </>
