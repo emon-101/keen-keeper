@@ -1,7 +1,10 @@
-import React from "react";
+"use client"
+import { friendContext } from "@/app/contextApi/friendContext";
+import React, { useContext } from "react";
 import { LuUserPlus } from "react-icons/lu";
 
 const Banner = () => {
+  const { friends, interaction } = useContext(friendContext);
   return (
     <div>
       {/* banner title n button*/}
@@ -26,29 +29,27 @@ const Banner = () => {
       <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 mt-10">
         <div className="p-8 rounded-xl bg-base-100 text-center border border-white shadow-md">
           <h1 className="text-3xl text-[#244D3F] font-semibold">
-            {/* {friends.length} */}12
+            {friends.length}
           </h1>
           <h2 className="text-[#64748B] text-[18px]">Total Friends</h2>
         </div>
         <div className="p-8 rounded-xl bg-base-100 text-center border border-white shadow-md">
           <h1 className="text-3xl text-[#244D3F] font-semibold">
-            {/* {friends.filter((friend) => friend.status === "on-track").length} */}5
+            {friends.filter((friend) => friend.status === "on-track").length}
           </h1>
           <h2 className="text-[#64748B] text-[18px]">On Track</h2>
         </div>
         <div className="p-8 rounded-xl  bg-base-100 text-center border border-white shadow-md">
           <h1 className="text-3xl text-[#244D3F] font-semibold">
             {
-            //   friends.filter((friend) => friend.status === "need-attention")
-                // .length
-                0
+              friends.filter((friend) => friend.status === "need-attention").length
             }
           </h1>
           <h2 className="text-[#64748B] text-[18px]">Need Attention</h2>
         </div>
         <div className="p-8 rounded-xl bg-base-100 text-center border border-white shadow-md">
           <h1 className="text-3xl text-[#244D3F] font-semibold">
-            {/* {interaction.length} */}0
+            {interaction.length}
           </h1>
           <h2 className="text-[#64748B] text-[18px]">
             Interactions This Month
