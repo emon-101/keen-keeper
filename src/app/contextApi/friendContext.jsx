@@ -2,6 +2,7 @@
 
 import { createContext, useState } from "react";
 import friendsData from "@/app/data/data.json";
+import { toast } from "react-toastify";
 
 export const friendContext = createContext();
 

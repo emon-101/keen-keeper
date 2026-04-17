@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
 
-const TimeLine = ({item}) => {
+const InteractionCard = ({item}) => {
   return (
-    <div className="p-4 bg-base-100 rounded-lg border border-[#E9E9E9]">
+    <div className="p-4 border-b border-[#E9E9E9]">
       <div className="flex items-center gap-4">
         <div>
           {item.type === "Call" && (
@@ -16,20 +16,18 @@ const TimeLine = ({item}) => {
             <Image src="/images/video.png" alt="video" width={40} height={40} />
           )}
         </div>
-        <div className="flex flex-col">
-          <div className="flex justify-center items-center gap-2">
-            <p className="md:text-lg text-sm font-semibold text-[#1F2937]">
-              {item.type}
+        <div className="flex flex-col  w-full">
+          <div className="flex items-center gap-4 md:gap-0 text-right md:text-start justify-between">
+            <p className="font-semibold text-[#1F2937]">{item.type}</p>
+            <p className="text-xs text-[#64748B]">
+              {new Date(item.timestamp).toLocaleString()}
             </p>
-            <p className="text-sm text-[#64748B] ">with {item.friend.name}</p>
           </div>
-          <p className="text-xs text-[#64748B]">
-            {new Date(item.timestamp).toLocaleString()}
-          </p>
+          <p className="text-sm text-[#64748B]">with {item.friend.name}</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default TimeLine;
+export default InteractionCard;
